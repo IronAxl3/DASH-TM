@@ -10,7 +10,7 @@ r = 0.08
 K = 100                        
 t = np.linspace(0, 60, 400)    
 
-# ----------  Curvas solución ----------
+
 P0_vals = [10, 30, 50, 120, 140]
 colors  = ["var(--uv-bio)", "var(--uv-mate)", "var(--uv-graf)", "#b35a00", "#6f42c1"]
 

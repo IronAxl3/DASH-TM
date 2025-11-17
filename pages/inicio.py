@@ -5,6 +5,7 @@ dash.register_page(__name__, path="/", name="inicio")
 
 layout = html.Div([
 
+
     html.Section(className='hero', children=[
         html.Div(className='hero-card', children=[
             html.Img(
@@ -43,12 +44,21 @@ layout = html.Div([
         """, mathjax=True),
     ]),
 
-    html.Section(className='cta-box', children=[
-        html.H3("¡Exploremos modelos matemáticos juntos!"),
-        html.Div(className='btn-group', children=[
-            dcc.Link("Tema 1: Crecimiento Poblacional", href='/clase1', className='btn btn-primary'),
-            dcc.Link("Tema 2: Modelo Logístico", href='/clase2', className='btn btn-secondary'),
-            dcc.Link("Tema 3: Modelo Logístico", href='/clase3', className='btn btn-secondary'),
-        ])
-    ])
+   html.Section(className='cta-box', children=[
+    html.H3("¡Exploremos modelos matemáticos juntos!"),
+
+    html.Div(className='btn-grid', children=[
+        # Fila 1
+        dcc.Link(["📈 ", html.Br(), "Crecimiento Poblacional"], href='/clase1', className='btn btn-primary'),
+        dcc.Link(["🌱 ", html.Br(), "Modelo Logístico"], href='/clase2', className='btn btn-secondary'),
+        dcc.Link(["🔧 ", html.Br(), "Logístico Interactivo"], href='/clase3', className='btn btn-secondary'),
+
+        # Fila 2
+        dcc.Link(["🦠 ", html.Br(), "Modelo SIR"], href='/clase4', className='btn btn-accent'),
+        dcc.Link(["🧭 ", html.Br(), "Campo Vectorial"], href='/clase5', className='btn btn-accent'),
+        dcc.Link(["📊 ", html.Br(), "Modelo SEIR"], href='/clase6', className='btn btn-accent'),
+    ]),
+
+    html.P("Haz clic en cualquier tema para comenzar.", className='cta-hint')
+])
 ])
