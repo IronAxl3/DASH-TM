@@ -57,7 +57,6 @@ layout = html.Div(className="page-container", children=[
             html.Div(id="info-campo", className="context-viva mt-2")
         ]),
 
-        # Gráfico
         html.Div(className="col-60", children=[
             dcc.Graph(id="grafica-campo", className="graph-viva", config={'displayModeBar': False})
         ])
@@ -123,7 +122,7 @@ def actualizar(_, __, ___, ____, fx_orig, fy_orig, xmax, ymax, n):
                 u, v = fx[i, j], fy[i, j]
                 if np.isnan(u) or np.isnan(v) or (u == 0 and v == 0):
                     continue
-                # color indexado por magnitud
+                
                 color_int = int(255 * (mag[i, j] - mag_min) / (mag_max - mag_min + 1e-12))
                 rgb = f"rgb({int(255 - color_int)}, {int(color_int)}, {int(255 - color_int * 0.5)})"
 

@@ -5,7 +5,7 @@ import numpy as np
 
 dash.register_page(__name__, name="Clase 2: E. Logística", path="/clase2")
 
-# ---------- parámetros ----------
+
 r = 0.08                       
 K = 100                        
 t = np.linspace(0, 60, 400)    

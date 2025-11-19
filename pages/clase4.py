@@ -23,7 +23,6 @@ layout = html.Div(className="page-container", children=[
 
     html.Div(className="fila-40-60 gap-2", children=[
 
-        # Panel de control
         html.Div(className="col-40 card-viva", children=[
             html.H4("Panel de control", className="subt-viva"),
 
@@ -50,7 +49,6 @@ layout = html.Div(className="page-container", children=[
             dcc.Markdown(id="info-basic", mathjax=True, className="context-viva")
         ]),
 
-        # Gráfico
         html.Div(className="col-60", children=[
             dcc.Graph(id="sir-graph", className="graph-viva", config={'displayModeBar': False})
         ])
