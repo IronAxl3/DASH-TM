@@ -391,7 +391,6 @@ p, li {
   box-shadow: 0 4px 20px var(--uv-sombra);
 }
 
-/* ---------- Botones de ejemplo ---------- */
 .btn-block { width: 100%; margin-top: 1rem; }
 .btn-ejemplo {
   background: transparent;
@@ -415,7 +414,6 @@ p, li {
   flex-direction: column;
   gap: .5rem;
 }
-/* ===== BOTÓN TOGGLE ===== */
 .toggle-switch{
   position: fixed;
   top: 1rem;
@@ -439,7 +437,6 @@ p, li {
   border-color: var(--in-border);
 }
 
-/* ===== ESQUEMA CLARO (por defecto) ===== */
 :root{
   --bg: #f5f7fa;
   --tarjeta: #ffffff;
@@ -452,7 +449,6 @@ p, li {
   --acento-hv: #006e59;
 }
 
-/* ===== ESQUEMA OSCURO ===== */
 body.dark{
   --bg: #0d1117;
   --tarjeta: #161b22;
@@ -603,7 +599,7 @@ body{
 }
 
 
-/* ===== PALETA PROFESIONAL ===== */
+/* PALETA gym  */
 :root{
   --gym-carbon: #0d1117;
   --gym-steel: #b22222;
@@ -618,7 +614,6 @@ body{
   --gym-accent-hv: #79c0ff;
 }
 
-/* ===== TIPOGRAFÍA PROFESIONAL ===== */
 .gym-title{
   font-family: "Bebas Neue", sans-serif;
   font-size: 3rem;
@@ -689,4 +684,568 @@ body{
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
   padding: 1rem;
+}
+
+/* ===== ANÁLISIS DETALLADO GYM ===== */
+.gym-analysis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-radius: 12px;
+  border: 2px solid #FFD700;
+}
+
+.gym-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  border-left: 4px solid #FFD700;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.gym-metric:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+}
+
+.gym-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.gym-value {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.gym-unit {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  margin-top: 0.25rem;
+  font-weight: 600;
+}
+
+/* Recomendación destacada */
+.gym-recommendation {
+  grid-column: 1 / -1;
+  padding: 2rem;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.gym-label-rec {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.gym-text-rec {
+  font-size: 1rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* ===== HERO PREMIUM ===== */
+.page-container.gym-dark {
+  background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+  color: #ffffff;
+  padding: 0;
+}
+
+.gym-hero-premium {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid #FFD700;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  margin-bottom: 3rem;
+}
+
+.gym-title-main {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+  text-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.gym-poem-premium {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #ffffff;
+  margin: 1.5rem 0;
+  padding: 0 2rem;
+  border-left: 4px solid #FFD700;
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.gym-subtitle-premium {
+  font-size: 1.1rem;
+  color: #FFD700;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== INPUT SECTION ===== */
+.gym-input-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.gym-card-input {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(255, 165, 0, 0.05) 100%);
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.gym-card-input:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+}
+
+.gym-card-title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid #FFD700;
+  padding-bottom: 1rem;
+}
+
+.gym-input-group {
+  margin-bottom: 1.5rem;
+}
+
+.gym-input-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFD700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gym-input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid #FFD700;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.gym-input-field:focus {
+  outline: none;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.Select-control {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 2px solid #FFD700 !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+}
+
+.Select-control:hover {
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2) !important;
+}
+
+.Select-input > input {
+  background: transparent !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.Select-placeholder {
+  color: #b0b0b0 !important;
+  font-weight: 600 !important;
+}
+
+.Select-menu {
+  background: rgba(30, 30, 30, 0.98) !important;
+  border: 2px solid #FFD700 !important;
+  border-top: none !important;
+  border-radius: 0 0 8px 8px !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.Select-option {
+  background: rgba(30, 30, 30, 0.98) !important;
+  color: #ffffff !important;
+  padding: 0.75rem 1rem !important;
+  font-weight: 600 !important;
+}
+
+.Select-option:hover,
+.Select-option.is-focused {
+  background: rgba(255, 215, 0, 0.15) !important;
+  color: #FFD700 !important;
+}
+
+.Select-option.is-selected {
+  background: rgba(255, 215, 0, 0.2) !important;
+  color: #FFD700 !important;
+  font-weight: 700 !important;
+}
+
+.Select-value-label {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.Select-arrow {
+  border-color: #FFD700 transparent transparent !important;
+}
+
+.dash-dropdown {
+  width: 100% !important;
+}
+
+.dash-dropdown .Select-control {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 2px solid #FFD700 !important;
+  border-radius: 8px !important;
+  min-height: 44px !important;
+}
+
+.dash-dropdown .Select-input input {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.dash-dropdown .Select-option {
+  color: #ffffff !important;
+  background: rgba(30, 30, 30, 0.98) !important;
+  padding: 0.75rem 1rem !important;
+  font-weight: 600 !important;
+}
+
+.dash-dropdown .Select-option:hover {
+  background: rgba(255, 215, 0, 0.15) !important;
+  color: #FFD700 !important;
+}
+
+.VirtualizedSelectOption {
+  background: rgba(30, 30, 30, 0.98) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.VirtualizedSelectOption:hover,
+.VirtualizedSelectOption.focused {
+  background: rgba(255, 215, 0, 0.15) !important;
+  color: #FFD700 !important;
+}
+
+/* Ensure dropdown menus are visible */
+.Select-menu-outer {
+  background: rgba(30, 30, 30, 0.98) !important;
+  border: 2px solid #FFD700 !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7) !important;
+}
+
+.Select-menu {
+  max-height: 400px !important;
+  background: rgba(30, 30, 30, 0.98) !important;
+}
+
+/* Force text color in all dropdown states */
+div.Select-menu-outer div.Select-option {
+  color: #ffffff !important;
+  background: rgba(30, 30, 30, 0.98) !important;
+  font-weight: 600 !important;
+  padding: 10px 12px !important;
+  line-height: 1.5 !important;
+}
+
+div.Select-menu-outer div.Select-option:hover {
+  background: rgba(255, 215, 0, 0.2) !important;
+  color: #FFD700 !important;
+}
+
+div.Select-menu-outer div.Select-option.is-selected {
+  background: rgba(255, 215, 0, 0.25) !important;
+  color: #FFD700 !important;
+}
+
+.gym-slider-group {
+  margin-bottom: 2rem;
+}
+
+.gym-slider-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FFD700;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gym-slider {
+  width: 100%;
+}
+
+/* ===== BUTTON ===== */
+.gym-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+}
+
+.gym-btn-main {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.gym-btn-main:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 50px rgba(255, 215, 0, 0.5);
+}
+
+.gym-btn-main:active {
+  transform: scale(0.98);
+}
+
+/* ===== CHARTS SECTION ===== */
+.gym-charts-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+}
+
+.gym-chart-card {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(255, 165, 0, 0.05) 100%);
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.gym-chart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
+}
+
+.gym-chart-title {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.gym-analysis-section {
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+}
+
+.gym-section-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #FFD700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #FFD700;
+}
+
+.gym-exercises-section {
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+}
+
+.gym-exercises-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.gym-card {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(255, 165, 0, 0.05) 100%);
+  border: 2px solid #FFD700;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.gym-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+}
+
+.gym-card h5 {
+  color: #FFD700;
+  font-weight: 700;
+  margin: 0.75rem 0 0.5rem;
+  font-size: 1rem;
+}
+
+.gym-card .gym-target {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.gym-gif {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gym-audio-section {
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(255, 165, 0, 0.05) 100%);
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  margin: 0 2rem 3rem;
+  backdrop-filter: blur(10px);
+}
+
+.gym-audio-player {
+  width: 100%;
+  margin: 1.5rem 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.gym-audio-text {
+  color: #b0b0b0;
+  font-style: italic;
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.gym-audio-quote {
+  display: block;
+  color: #FFD700;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+/* ===== FOOTER ===== */
+.gym-footer-premium {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-top: 3px solid #FFD700;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.gym-footer-text {
+  color: #ffffff;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.gym-footer-link {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.gym-footer-link:hover {
+  color: #FFA500;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .gym-input-section {
+    grid-template-columns: 1fr;
+    padding: 0 1rem 1rem;
+  }
+  
+  .gym-charts-section {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .gym-exercises-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .gym-title-main {
+    font-size: 2rem;
+  }
+  
+  .gym-poem-premium {
+    font-size: 1.1rem;
+  }
+  
+  .gym-audio-section {
+    margin: 0 1rem 2rem;
+  }
+  
+  .gym-analysis-section,
+  .gym-exercises-section {
+    padding: 0 1rem;
+  }
 } 

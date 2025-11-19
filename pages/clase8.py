@@ -84,92 +84,109 @@ def muscle_activation(peso, reps, series, tempo, descanso, nivel):
     activacion = min(100, (porcentaje_1rm * 0.5 + volumen * 0.25 + factor_tempo * 10 + factor_descanso * 5) * factor_nivel)
     return activacion, porcentaje_1rm, volumen
 
-layout = html.Div(className="page-container", children=[
+layout = html.Div(className="page-container gym-dark", children=[
 
-    html.Div(className="gym-hero", children=[
-        html.H1("La doncella de hierro", className="titulo-viva"),
-        html.Blockquote(random.choice(MESSAGES), className="gym-poem"),
-        html.Span("La mente lo puede todo, tu mente de perrita es la que tiene que cambiar", className="gym-honey")
+    html.Div(className="gym-hero-premium", children=[
+        html.H1("⚡ LA DONCELLA DE HIERRO", className="gym-title-main"),
+        html.Blockquote(random.choice(MESSAGES), className="gym-poem-premium"),
+        html.Span("🔥 Transforma datos en poder", className="gym-subtitle-premium")
     ]),
 
-    html.Div(className="fila-50-50 gap-2", children=[
-        html.Div(className="col-50 card-viva", children=[
-            html.H4("Perfil personal", className="subt-viva"),
-            html.Label("Peso corporal (kg)", className="label-viva"),
-            dcc.Input(id="input-peso", type="number", value=70, min=30, max=200, className="input-viva"),
-            html.Label("Edad", className="label-viva"),
-            dcc.Input(id="input-edad", type="number", value=25, min=10, max=100, className="input-viva"),
-            html.Label("Nivel", className="label-viva"),
-            dcc.Dropdown(id="dd-nivel", options=[
-                {"label": "Principiante", "value": "principiante"},
-                {"label": "Intermedio", "value": "intermedio"},
-                {"label": "Avanzado", "value": "avanzado"}
-            ], value="intermedio", className="input-viva")
+    html.Div(className="gym-input-section", children=[
+        html.Div(className="gym-card-input", children=[
+            html.H4("💪 PERFIL PERSONAL", className="gym-card-title"),
+            html.Div(className="gym-input-group", children=[
+                html.Label("Peso corporal (kg)", className="gym-input-label"),
+                dcc.Input(id="input-peso", type="number", value=70, min=30, max=200, className="gym-input-field")
+            ]),
+            html.Div(className="gym-input-group", children=[
+                html.Label("Edad (años)", className="gym-input-label"),
+                dcc.Input(id="input-edad", type="number", value=25, min=10, max=100, className="gym-input-field")
+            ]),
+            html.Div(className="gym-input-group", children=[
+                html.Label("Nivel de entrenamiento", className="gym-input-label"),
+                dcc.Dropdown(id="dd-nivel", options=[
+                    {"label": "🤸 Principiante", "value": "principiante"},
+                    {"label": "🤸 Intermedio", "value": "intermedio"},
+                    {"label": "🤸 Avanzado", "value": "avanzado"}
+                ], value="intermedio", className="gym-input-field")
+            ])
         ]),
 
-        html.Div(className="col-50 card-viva", children=[
-            html.H4("Ejercicio + parámetros", className="subt-viva"),
-            html.Label("Músculo", className="label-viva"),
-            dcc.Dropdown(
-                id="dd-muscle",
-                options=[{"label": m["name"], "value": m["name"].lower()} for m in get_muscles()],
-                value="chest",
-                className="input-viva"
-            ),
-            html.Label("Peso (kg)", className="label-viva"),
-            dcc.Slider(id="slider-peso", min=20, max=200, step=2.5, value=60,
-                       marks={20: "20", 60: "60", 100: "100", 150: "150", 200: "200"}, className="slider-viva"),
-            html.Label("Repeticiones", className="label-viva"),
-            dcc.Slider(id="slider-reps", min=1, max=20, step=1, value=8,
-                       marks={1: "1", 5: "5", 10: "10", 15: "15", 20: "20"}, className="slider-viva"),
-            html.Label("Series", className="label-viva"),
-            dcc.Slider(id="slider-series", min=1, max=10, step=1, value=3,
-                       marks={1: "1", 5: "5", 10: "10"}, className="slider-viva"),
-            html.Label("Tiempo (s)", className="label-viva"),
-            dcc.Slider(id="slider-tempo", min=1, max=6, step=0.5, value=2,
-                       marks={1: "1s", 2: "2s", 3: "3s", 4: "4s", 5: "5s", 6: "6s"}, className="slider-viva"),
-            html.Label("Descanso (s)", className="label-viva"),
-            dcc.Slider(id="slider-descanso", min=30, max=300, step=15, value=90,
-                       marks={30: "30s", 90: "90s", 180: "3m", 300: "5m"}, className="slider-viva")
+        html.Div(className="gym-card-input", children=[
+            html.H4("🏋️ EJERCICIO + PARÁMETROS", className="gym-card-title"),
+            html.Div(className="gym-input-group", children=[
+                html.Label("Grupo muscular", className="gym-input-label"),
+                dcc.Dropdown(
+                    id="dd-muscle",
+                    options=[{"label": m["name"], "value": m["name"].lower()} for m in get_muscles()],
+                    value="chest",
+                    className="gym-input-field"
+                )
+            ]),
+            html.Div(className="gym-slider-group", children=[
+                html.Label("⚖️ PESO (kg)", className="gym-slider-label"),
+                dcc.Slider(id="slider-peso", min=20, max=200, step=2.5, value=60,
+                           marks={20: "20", 60: "60", 100: "100", 150: "150", 200: "200"}, className="gym-slider")
+            ]),
+            html.Div(className="gym-slider-group", children=[
+                html.Label("🔄 REPETICIONES", className="gym-slider-label"),
+                dcc.Slider(id="slider-reps", min=1, max=20, step=1, value=8,
+                           marks={1: "1", 5: "5", 10: "10", 15: "15", 20: "20"}, className="gym-slider")
+            ]),
+            html.Div(className="gym-slider-group", children=[
+                html.Label("📈 SERIES", className="gym-slider-label"),
+                dcc.Slider(id="slider-series", min=1, max=10, step=1, value=3,
+                           marks={1: "1", 5: "5", 10: "10"}, className="gym-slider")
+            ]),
+            html.Div(className="gym-slider-group", children=[
+                html.Label("⏱️ TIEMPO (segundos)", className="gym-slider-label"),
+                dcc.Slider(id="slider-tempo", min=1, max=6, step=0.5, value=2,
+                           marks={1: "1s", 2: "2s", 3: "3s", 4: "4s", 5: "5s", 6: "6s"}, className="gym-slider")
+            ]),
+            html.Div(className="gym-slider-group", children=[
+                html.Label("😤 DESCANSO (segundos)", className="gym-slider-label"),
+                dcc.Slider(id="slider-descanso", min=30, max=300, step=15, value=90,
+                           marks={30: "30s", 90: "90s", 180: "3m", 300: "5m"}, className="gym-slider")
+            ])
         ])
     ]),
 
-    html.Div(className="center mt-3", children=[
-        html.Button("💪 Calcular entrenamiento", id="btn-calcular", className="btn btn-primary btn-block")
+    html.Div(className="gym-button-container mt-4", children=[
+        html.Button("⚡ CALCULAR ENTRENAMIENTO", id="btn-calcular", className="gym-btn-main")
     ]),
 
-    html.Div(className="fila-50-50 gap-2 mt-3", children=[
-        html.Div(className="col-50 card-viva", children=[
-            html.H4("Activación muscular", className="subt-viva"),
+    html.Div(className="gym-charts-section mt-4", children=[
+        html.Div(className="gym-chart-card", children=[
+            html.H4("🔥 ACTIVACIÓN MUSCULAR", className="gym-chart-title"),
             dcc.Graph(id="grafica-activacion", style={"height": "45vh"})
         ]),
-        html.Div(className="col-50 card-viva", children=[
-            html.H4("Radar de capacidades", className="subt-viva"),
+        html.Div(className="gym-chart-card", children=[
+            html.H4("📊 RADAR DE CAPACIDADES", className="gym-chart-title"),
             dcc.Graph(id="grafica-radar", style={"height": "45vh"})
         ])
     ]),
 
-    html.Div(id="info-detallada", className="col-100 card-viva mt-3", children=[
-        html.H4("Análisis detallado", className="subt-viva"),
-        html.Div(className="poem-context", children=[])
+    html.Div(id="info-detallada", className="gym-analysis-section mt-4", children=[
+        html.H4("📈 ANÁLISIS DETALLADO", className="gym-section-title"),
+        html.Div(className="gym-analysis", children=[])
     ]),
 
-    html.Div(className="col-100 card-viva mt-3", children=[
-        html.H4("Ejercicios recomendados", className="subt-viva"),
-        html.Div(id="ejercicios-galeria", className="poem-gallery")
+    html.Div(className="gym-exercises-section mt-4", children=[
+        html.H4("💪 EJERCICIOS RECOMENDADOS", className="gym-section-title"),
+        html.Div(id="ejercicios-galeria", className="gym-exercises-gallery")
     ]),
 
-    # --- AUDIO ---
-    html.Div(className="col-100 card-viva audio-card mt-3", children=[
-        html.H4("Sonido", className="subt-viva"),
-        html.Audio(id="gym-sound", controls=True, className="cosmic-player"),
-        html.P("Haz clic en play y siente cada repetición", className="poem-context"),
-        html.Span("🔊 "+random.choice(MESSAGES), className="gym-tagline")
+    html.Div(className="gym-audio-section mt-4", children=[
+        html.H4("🔊 MOTIVACIÓN SONORA", className="gym-section-title"),
+        html.Audio(id="gym-sound", controls=True, className="gym-audio-player"),
+        html.P("Entrena fuerte, corre más rápido, sube más alto", className="gym-audio-text"),
+        html.Span("🎵 "+random.choice(MESSAGES), className="gym-audio-quote")
     ]),
 
-    html.Footer(className="gym-footer", children=[
-        html.P("El dolor es momentaneo, la gloria es eterna – @Iron_Axl", className="poem-firm"),
-        html.A("GitHub", href="https://github.com/IronAxl3", target="_blank", className="poem-link")
+    html.Footer(className="gym-footer-premium", children=[
+        html.P("El dolor es momentáneo. La gloria es eterna. – @Iron_Axl", className="gym-footer-text"),
+        html.A("🔗 GitHub", href="https://github.com/IronAxl3", target="_blank", className="gym-footer-link")
     ])
 ])
 
@@ -248,18 +265,43 @@ def calcular_entrenamiento(_, peso_corporal, edad, nivel, peso_levantado, reps, 
 
     zona = "Hipertrofia" if activacion > 70 else "Fuerza-resistencia" if activacion > 50 else "Recuperación activa"
     recomendacion = (
-        "¡Perfecto! Estás en zona óptima para hipertrofia."
+        "¡Perfecto! Estás en zona óptima para hipertrofia. Mantén esta intensidad."
         if activacion > 70 else
         "Aumenta 5 kg o reduce descanso a 60 s para entrar en hipertrofia."
     )
-    info = f"""
-    **1RM estimado**: {one_rm:.1f} kg  
-    **% de 1RM utilizado**: {porcentaje_1rm:.1f}%  
-    **Volumen total**: {volumen} reps  
-    **Activación muscular**: {activacion:.1f}%  
-    **Zona de entrenamiento**: {zona}  
-    **Recomendación**: {recomendacion}
-    """
+    
+    color_activacion = "#4CAF50" if activacion > 70 else "#FF9800" if activacion > 50 else "#F44336"
+    
+    info = html.Div(className="gym-analysis", children=[
+        html.Div(className="gym-metric", children=[
+            html.Span("🔥 1RM ESTIMADO", className="gym-label"),
+            html.Span(f"{one_rm:.1f}", className="gym-value"),
+            html.Span("kg", className="gym-unit")
+        ]),
+        html.Div(className="gym-metric", children=[
+            html.Span("⚡ % DE 1RM", className="gym-label"),
+            html.Span(f"{porcentaje_1rm:.1f}", className="gym-value"),
+            html.Span("%", className="gym-unit")
+        ]),
+        html.Div(className="gym-metric", children=[
+            html.Span("📊 VOLUMEN", className="gym-label"),
+            html.Span(f"{volumen}", className="gym-value"),
+            html.Span("reps", className="gym-unit")
+        ]),
+        html.Div(className="gym-metric", children=[
+            html.Span("💪 ACTIVACIÓN", className="gym-label"),
+            html.Span(f"{activacion:.1f}", className="gym-value", style={"color": color_activacion}),
+            html.Span("%", className="gym-unit")
+        ]),
+        html.Div(className="gym-metric", children=[
+            html.Span("🎯 ZONA", className="gym-label"),
+            html.Span(zona, className="gym-value"),
+        ]),
+        html.Div(className="gym-recommendation", children=[
+            html.Span("💡 RECOMENDACIÓN", className="gym-label-rec"),
+            html.Span(recomendacion, className="gym-text-rec")
+        ])
+    ])
     return fig1, fig2, cards, info
 
 @callback(
