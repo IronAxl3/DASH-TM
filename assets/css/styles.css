@@ -371,7 +371,7 @@ p, li {
   box-shadow: 0 0 0 3px rgba(0, 132, 106, 0.15);
   outline: none;
 }
-/* ----------  SIR ---------- */
+
 .gap-2 { gap: 2rem; }
 .center { text-align: center; }
 .subtitulo-viva {
@@ -461,7 +461,7 @@ body.dark{
   --acento-hv: #79c0ff;
 }
 
-/* ===== APLICAR VARIABLES ===== */
+
 body{
   margin: 0;
   padding: 0;
@@ -599,7 +599,7 @@ body{
 }
 
 
-/* PALETA gym  */
+
 :root{
   --gym-carbon: #0d1117;
   --gym-steel: #b22222;
@@ -636,7 +636,7 @@ body{
   color: var(--gym-text);
 }
 
-/* ===== TARJETAS PROFESIONALES ===== */
+
 .gym-card{
   background: var(--gym-dark);
   border: 1px solid var(--gym-border);
@@ -662,11 +662,45 @@ body{
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.3);
-  transition: transform 0.3s;
+  box-shadow: 
+    0 0 0 3px #FFD700,
+    0 0 0 5px #1a1a1a,
+    0 0 20px rgba(255, 215, 0, 0.4),
+    inset 0 0 15px rgba(255, 215, 0, 0.1);
+  animation: gymGifShine 3s ease-in-out infinite, gymCardPulse 4s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55), filter 0.3s ease;
 }
 .gym-gif:hover{
-  transform: scale(1.02);
+  transform: scale(1.08) rotate(-1deg);
+  filter: brightness(1.15) saturate(1.2);
+  animation: gymGifSuperShine 0.6s ease-in-out;
+}
+
+@keyframes gymGifShine {
+  0%, 100% {
+    box-shadow: 
+      0 0 0 3px #FFD700,
+      0 0 0 5px #1a1a1a,
+      0 0 20px rgba(255, 215, 0, 0.4),
+      inset 0 0 15px rgba(255, 215, 0, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 3px #FFA500,
+      0 0 0 5px #1a1a1a,
+      0 0 35px rgba(255, 215, 0, 0.7),
+      inset 0 0 25px rgba(255, 215, 0, 0.2);
+  }
+}
+
+@keyframes gymCardPulse {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.3)); }
+  50% { filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.5)); }
+}
+
+@keyframes gymGifSuperShine {
+  0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.8); }
+  100% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
 }
 
 .gym-target{
@@ -678,7 +712,7 @@ body{
   margin-top: 0.5rem;
 }
 
-/* Contenedor de la galería: grid responsive */
+
 .gym-gallery{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -686,7 +720,7 @@ body{
   padding: 1rem;
 }
 
-/* ===== ANÁLISIS DETALLADO GYM ===== */
+
 .gym-analysis {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -740,7 +774,7 @@ body{
   font-weight: 600;
 }
 
-/* Recomendación destacada */
+
 .gym-recommendation {
   grid-column: 1 / -1;
   padding: 2rem;
@@ -767,7 +801,7 @@ body{
   line-height: 1.6;
 }
 
-/* ===== HERO PREMIUM ===== */
+
 .page-container.gym-dark {
   background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
   color: #ffffff;
@@ -815,7 +849,7 @@ body{
   letter-spacing: 1px;
 }
 
-/* ===== INPUT SECTION ===== */
+
 .gym-input-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -1029,7 +1063,7 @@ div.Select-menu-outer div.Select-option.is-selected {
   width: 100%;
 }
 
-/* ===== BUTTON ===== */
+
 .gym-button-container {
   display: flex;
   justify-content: center;
@@ -1061,7 +1095,7 @@ div.Select-menu-outer div.Select-option.is-selected {
   transform: scale(0.98);
 }
 
-/* ===== CHARTS SECTION ===== */
+
 .gym-charts-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -1197,7 +1231,7 @@ div.Select-menu-outer div.Select-option.is-selected {
   padding-left: 0.75rem;
 }
 
-/* ===== FOOTER ===== */
+
 .gym-footer-premium {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   border-top: 3px solid #FFD700;
@@ -1256,5 +1290,680 @@ div.Select-menu-outer div.Select-option.is-selected {
   .gym-analysis-section,
   .gym-exercises-section {
     padding: 0 1rem;
+  }
+}
+
+.inicio-hero-section {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  padding: 5rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid #00846a;
+  color: #ffffff;
+}
+
+.inicio-hero-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.inicio-hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.inicio-hero-images {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.lava-lamp-container {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  background: linear-gradient(to bottom, #1a1a1a 0%, #0f0f0f 100%);
+  border-radius: 50px 50px 60px 60px;
+  border: 4px solid #00846a;
+  overflow: hidden;
+  box-shadow: inset 0 0 30px rgba(0, 132, 106, 0.3), 0 0 50px rgba(0, 132, 106, 0.4);
+}
+
+.lava-lamp-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 15%;
+  background: linear-gradient(180deg, rgba(0, 212, 170, 0.2) 0%, transparent 100%);
+  z-index: 10;
+}
+
+.lava-lamp-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20%;
+  background: radial-gradient(ellipse at center, rgba(0, 132, 106, 0.3) 0%, transparent 70%);
+  z-index: 5;
+}
+
+.lava-blobs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 212, 170, 0.8), rgba(0, 132, 106, 0.4));
+  filter: blur(8px);
+  opacity: 0.7;
+}
+
+.blob-1 {
+  width: 80px;
+  height: 80px;
+  animation: blobFlow1 6s ease-in-out infinite;
+}
+
+.blob-2 {
+  width: 60px;
+  height: 60px;
+  animation: blobFlow2 8s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.blob-3 {
+  width: 70px;
+  height: 70px;
+  animation: blobFlow3 7s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@keyframes blobFlow1 {
+  0% {
+    bottom: 10%;
+    left: 20%;
+    transform: scale(0.8);
+  }
+  25% {
+    bottom: 30%;
+    left: 40%;
+    transform: scale(1.1);
+  }
+  50% {
+    bottom: 50%;
+    left: 50%;
+    transform: scale(0.9);
+  }
+  75% {
+    bottom: 30%;
+    left: 30%;
+    transform: scale(1);
+  }
+  100% {
+    bottom: 10%;
+    left: 20%;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes blobFlow2 {
+  0% {
+    bottom: 20%;
+    right: 25%;
+    transform: scale(1);
+  }
+  25% {
+    bottom: 45%;
+    right: 15%;
+    transform: scale(0.8);
+  }
+  50% {
+    bottom: 60%;
+    right: 35%;
+    transform: scale(1.1);
+  }
+  75% {
+    bottom: 40%;
+    right: 50%;
+    transform: scale(0.9);
+  }
+  100% {
+    bottom: 20%;
+    right: 25%;
+    transform: scale(1);
+  }
+}
+
+@keyframes blobFlow3 {
+  0% {
+    bottom: 15%;
+    right: 15%;
+    transform: scale(0.9);
+  }
+  25% {
+    bottom: 35%;
+    right: 30%;
+    transform: scale(1.05);
+  }
+  50% {
+    bottom: 55%;
+    right: 20%;
+    transform: scale(0.8);
+  }
+  75% {
+    bottom: 35%;
+    right: 40%;
+    transform: scale(1);
+  }
+  100% {
+    bottom: 15%;
+    right: 15%;
+    transform: scale(0.9);
+  }
+}
+
+.lava-profile-image {
+  width: 220px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 40px rgba(0, 132, 106, 0.4);
+  animation: heroGlow 4s ease-in-out infinite, profileShimmer 3s ease-in-out infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+  background: linear-gradient(135deg, rgba(0, 132, 106, 0.3), rgba(0, 212, 170, 0.2));
+  padding: 3px;
+  box-sizing: border-box;
+}
+
+@keyframes profileShimmer {
+  0%, 100% { 
+    filter: drop-shadow(0 0 15px rgba(0, 212, 170, 0.5)) brightness(1);
+  }
+  50% { 
+    filter: drop-shadow(0 0 25px rgba(0, 212, 170, 0.8)) brightness(1.05);
+  }
+}
+
+.judo-medal-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%);
+  border: 3px solid #FFD700;
+  border-radius: 16px;
+  padding: 2rem;
+  min-height: 400px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 0 0 2px #1a1a1a,
+    0 0 30px rgba(255, 215, 0, 0.3),
+    inset 0 0 30px rgba(255, 215, 0, 0.05);
+  animation: judoCardGlow 3s ease-in-out infinite;
+}
+
+.judo-medal-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 
+    0 0 0 2px #FFA500,
+    0 0 50px rgba(255, 215, 0, 0.6),
+    inset 0 0 30px rgba(255, 215, 0, 0.1),
+    0 20px 50px rgba(255, 215, 0, 0.3);
+  border-color: #FFA500;
+}
+
+@keyframes judoCardGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 0 2px #1a1a1a,
+      0 0 30px rgba(255, 215, 0, 0.3),
+      inset 0 0 30px rgba(255, 215, 0, 0.05);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 2px #FFD700,
+      0 0 50px rgba(255, 215, 0, 0.5),
+      inset 0 0 40px rgba(255, 215, 0, 0.1);
+  }
+}
+
+.judo-medal-showcase {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 4px solid #FFD700;
+  box-shadow: 
+    0 0 0 2px #1a1a1a,
+    0 0 20px rgba(255, 215, 0, 0.5),
+    0 8px 25px rgba(255, 215, 0, 0.3),
+    inset 0 0 20px rgba(255, 215, 0, 0.1);
+  animation: medalGlow 3s ease-in-out infinite, medalFloat 4s ease-in-out infinite;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.judo-medal-showcase:hover {
+  transform: scale(1.02) rotateY(2deg);
+}
+
+@keyframes medalGlow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 0 2px #1a1a1a,
+      0 0 20px rgba(255, 215, 0, 0.5),
+      0 8px 25px rgba(255, 215, 0, 0.3),
+      inset 0 0 20px rgba(255, 215, 0, 0.1);
+    filter: brightness(1) drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+  }
+  50% { 
+    box-shadow: 
+      0 0 0 2px #FFD700,
+      0 0 40px rgba(255, 215, 0, 0.8),
+      0 15px 40px rgba(255, 215, 0, 0.5),
+      inset 0 0 30px rgba(255, 215, 0, 0.2);
+    filter: brightness(1.1) drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+  }
+}
+
+@keyframes medalFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes heroGlow {
+  0%, 100% { box-shadow: 0 0 40px rgba(0, 132, 106, 0.4); }
+  50% { box-shadow: 0 0 60px rgba(0, 132, 106, 0.8); }
+}
+
+.inicio-hero-text {
+  text-align: left;
+}
+
+.inicio-hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(135deg, #00846a 0%, #00d4aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+}
+
+.inicio-hero-subtitle {
+  font-size: 1.3rem;
+  color: #b0b0b0;
+  margin: 0.5rem 0 1.5rem;
+  font-weight: 500;
+}
+
+.inicio-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #00846a 0%, #00d4aa 100%);
+  margin: 1.5rem 0;
+  border-radius: 2px;
+}
+
+.inicio-hero-desc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin: 1.5rem 0;
+}
+
+.inicio-hero-skills {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.skill-tag {
+  padding: 0.5rem 1.2rem;
+  background: rgba(0, 132, 106, 0.2);
+  border: 2px solid #00846a;
+  color: #00d4aa;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(0, 132, 106, 0.4);
+  box-shadow: 0 0 20px rgba(0, 132, 106, 0.3);
+  transform: translateY(-2px);
+}
+
+
+.inicio-about-section {
+  background: var(--bg);
+  padding: 4rem 2rem;
+}
+
+.inicio-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.inicio-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--texto);
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.inicio-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(135deg, #00846a 0%, #00d4aa 100%);
+  border-radius: 2px;
+}
+
+.inicio-content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+}
+
+.inicio-trayectoria-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.inicio-card {
+  background: var(--tarjeta);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 30px var(--sombra);
+  transition: all 0.3s ease;
+  border-left: 6px solid #00846a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.inicio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 50px var(--sombra-hv);
+}
+
+.inicio-card.academic {
+  border-left-color: #00846a;
+}
+
+.inicio-card.deportivo {
+  border-left-color: #004d80;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 1.2rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--texto2);
+}
+
+/* SKILLS SECTION */
+.inicio-skills-section {
+  background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+  padding: 4rem 2rem;
+}
+
+.inicio-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.skill-card {
+  background: var(--tarjeta);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 15px var(--sombra);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.skill-card:hover {
+  border-color: #00846a;
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 132, 106, 0.2);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.skill-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--texto);
+  margin: 1rem 0 0.5rem;
+}
+
+.skill-desc {
+  font-size: 0.95rem;
+  color: var(--texto2);
+  line-height: 1.6;
+}
+
+/* OBJETIVO SECTION */
+.inicio-objetivo-section {
+  background: linear-gradient(135deg, #00846a 0%, #004d80 100%);
+  padding: 4rem 2rem;
+  color: #ffffff;
+}
+
+.inicio-objetivo-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.objetivo-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.objetivo-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+
+.inicio-cta-section {
+  background: var(--bg);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 0.5rem;
+}
+
+.cta-subtitle {
+  font-size: 1.1rem;
+  color: var(--texto2);
+  margin-bottom: 3rem;
+}
+
+.inicio-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.proyecto-btn {
+  padding: 1.5rem 1rem;
+  background: var(--tarjeta);
+  border: 2px solid #00846a;
+  border-radius: 12px;
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  box-shadow: 0 4px 15px var(--sombra);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+}
+
+.proyecto-btn:hover {
+  background: #00846a;
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 132, 106, 0.3);
+}
+
+.proyecto-btn.destacado {
+  background: linear-gradient(135deg, #00846a 0%, #00d4aa 100%);
+  color: #ffffff;
+  border-color: #00d4aa;
+  font-weight: 700;
+}
+
+.proyecto-btn.destacado:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 132, 106, 0.4);
+}
+
+
+@media (max-width: 968px) {
+  .inicio-hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .inicio-hero-images {
+    flex-direction: column;
+  }
+  
+  .inicio-hero-text {
+    text-align: center;
+  }
+  
+  .inicio-hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .inicio-trayectoria-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .inicio-projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .inicio-hero-section {
+    padding: 3rem 1rem;
+  }
+  
+  .lava-lamp-container {
+    width: 200px;
+    height: 300px;
+  }
+  
+  .lava-profile-image {
+    width: 160px;
+    height: 220px;
+  }
+  
+  .blob-1 { width: 60px; height: 60px; }
+  .blob-2 { width: 45px; height: 45px; }
+  .blob-3 { width: 50px; height: 50px; }
+  
+  .inicio-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .skill-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .inicio-trayectoria-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .judo-medal-card {
+    min-height: 300px;
+  }
+  
+  .judo-medal-showcase {
+    height: 280px;
+  }
+  
+  .inicio-objetivo-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .proyecto-btn {
+    padding: 1.2rem 0.8rem;
+    font-size: 0.85rem;
+    min-height: 100px;
+  }
+  
+  .inicio-projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
   }
 } 
