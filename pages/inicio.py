@@ -8,7 +8,7 @@ layout = html.Div([
     html.Section(className='inicio-hero-section', children=[
         html.Div(className='inicio-hero-container', children=[
             html.Div(className='inicio-hero-content', children=[
-                # LAVA LAMP PROFILE CONTAINER
+                
                 html.Div(className='lava-lamp-container', children=[
                     html.Div(className='lava-blobs', children=[
                         html.Div(className='blob blob-1'),
