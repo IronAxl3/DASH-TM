@@ -1188,6 +1188,15 @@ div.Select-menu-outer div.Select-option.is-selected {
   margin-top: 1rem;
 }
 
+.gym-audio-hint {
+  color: #b0b0b0;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  font-style: italic;
+  border-left: 3px solid #FFD700;
+  padding-left: 0.75rem;
+}
+
 /* ===== FOOTER ===== */
 .gym-footer-premium {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);

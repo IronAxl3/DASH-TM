@@ -69,7 +69,7 @@ def get_gym_images(query="gym workout", per_page=6):
         return [f"https://via.placeholder.com/400x300?text=Ejercicio+{i}" for i in range(per_page)]
 
 def get_sound_url():
-    return "https://www.fesliyanstudios.com/play-mp3/6701"
+    return "/assets/sound/motivación.mp3"
 
 def calculate_1RM(peso, repeticiones):
     return peso * (1 + repeticiones/30)
@@ -179,9 +179,15 @@ layout = html.Div(className="page-container gym-dark", children=[
 
     html.Div(className="gym-audio-section mt-4", children=[
         html.H4("🔊 MOTIVACIÓN SONORA", className="gym-section-title"),
-        html.Audio(id="gym-sound", controls=True, className="gym-audio-player"),
+        html.Audio(
+            id="gym-sound",
+            controls=True,
+            className="gym-audio-player",
+            style={"width": "100%", "marginBottom": "1rem"}
+        ),
         html.P("Entrena fuerte, corre más rápido, sube más alto", className="gym-audio-text"),
-        html.Span("🎵 "+random.choice(MESSAGES), className="gym-audio-quote")
+        html.Span("🎵 "+random.choice(MESSAGES), className="gym-audio-quote"),
+        html.P("Si no duele, no sirve", className="gym-audio-hint")
     ]),
 
     html.Footer(className="gym-footer-premium", children=[
